@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+    <div class="one"></div>
+
+    <script>
+        // 原生js中className会覆盖原先的类名
+        var div = document.querySelector('.one');
+        div.className = 'three';
+
+        $(function () {
+            // jQuery里面类操作只是对指定类进行操作 
+            // addClass相当于追加类 不影响原先的类名
+            $('.one').addClass('two');  
+            $('.one').removeClass('two');
+        })
+    </script>
+</body>
+</html>

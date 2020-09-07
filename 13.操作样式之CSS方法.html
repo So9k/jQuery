@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        // 操作样式之CSS方法
+
+        $(function () {
+            // 1. 参数只写属性名，则返回属性值
+            $('div').css('width');
+            console.log( $('div').css('width'));
+
+            // 2. 参数是属性名，属性值，逗号分隔，是设置一组样式
+            // 属性必须加引号，值如果是数字可以不用跟单位和引号
+            $('div').css('width', '300px')
+            $('div').css('width', 300);
+
+            // 3. 参数可以是对象形式，方便设置对组样式
+            // 属性名和属性值用冒号隔开，然后逗号分隔，属性可以不用加引号 复合属性驼峰命名法
+            // $('div').css({
+            //     'width':'400px',
+            //     'height':'400px',
+            //     'backgroundColor': 'skyblue',
+            // })
+            $('div').css({
+                width: 400,
+                height: 400,
+                backgroundColor: 'gold',
+            })
+        })
+    </script>
+</body>
+
+</html>

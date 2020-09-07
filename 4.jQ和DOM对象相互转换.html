@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jQuery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <video src="mov.mp4" muted></video>
+
+    <script>
+        // 1. DOM对象转换为jQuery对象
+
+            // (1) 直接获取得到的就是jQuery对象
+            $('video');
+
+            // (2) 已经使用原生js获取过来的DOM对象转换为jQuery对象
+            var myVideo = document.querySelector('video');
+            $(myVideo);
+
+            // $(myVideo).play(); jQuery里面没有play这个方法 不能使用
+            // myVideo.play();
+
+        // 2. jQuery对象转换为DOM对象 两种方式 通过索引号
+        // $('div')[index]
+        // $('div').get(index)
+
+        $('video')[0].play();
+        $('video').get(0).play();
+    </script>
+</body>
+</html>

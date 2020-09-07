@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+    <script>
+        // $ 是jQuery的别称 在代码中可以互相替代 伪类使用方便直接用$
+        // $ 是jQuery的顶级对象，相当于原生javascript中的window
+        // 把元素利用$包装成jQuery对象就可以调用
+        $ (function () {
+            alert(11);
+        });
+
+        jQuery(function () {
+            alert(22);
+        });
+    </script>
+</body>
+</html>

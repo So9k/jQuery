@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol li</li>
+        <li>我是ol li</li>
+        <li class="item">我是ol li</li>
+        <li>我是ol li</li>
+        <li>我是ol li</li>
+        <li>我是ol li</li>
+    </ol>
+    <ul>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+    </ul>
+
+    <div class="current">有类</div>
+    <div>没有current类</div>
+
+    <script>
+        $(function () {
+
+            // 1. 兄弟元素siblings() 除了自身元素之外的所有亲兄弟
+            // $('ol .item').siblings('li').css('color','blue');
+
+
+            // 2. 第n个元素  eq()
+                var index = 2;
+                // (1) 可以利用选择器的方式选择
+                $('ul li:eq(1)').css('color','blue');
+                // $('ul li:eq('+index+')').css('color','blue');
+                
+                // (2) 可以利用选择方法的方式选择   推荐写法
+                $('ul li').eq(2).css('color','blue');
+                // $('ul li').eq(index).css('color','blue');
+
+
+            // 3. 当前元素之前/之后所有的同辈元素
+            $('ol .item').prevAll().css('color','blue') //之前
+            $('ol .item').nextAll().css('color','blue') //之后
+
+
+            // 4. 判断是否有某个类名 hasClass()
+            $('div:first').hasClass('current');
+            console.log( $('div:first').hasClass('current'));
+
+            $('div:last').hasClass('current');
+            console.log( $('div:last').hasClass('current'));
+        })
+    </script>
+</body>
+</html>
